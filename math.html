@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mathematics | Medhavardhan Institute</title>
   <style>
+    :root {
+      --primary: #5e7f79;
+      --bg: #101417;
+      --container: #181e22;
+      --text: #d1dedc;
+      --accent: #b0cfc9;
+    }
     html {
       scroll-behavior: smooth;
     }
@@ -15,120 +22,194 @@
       font-family: 'Segoe UI', sans-serif;
     }
     body {
-      background-color: #101417;
-      color: #d1dedc;
+      background-color: var(--bg);
+      color: var(--text);
       line-height: 1.6;
       padding: 1rem;
     }
     .container {
-      max-width: 960px;
+      max-width: 1024px;
       margin: auto;
       padding: 2rem;
-      background: #181e22;
+      background: var(--container);
       border-radius: 1rem;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     }
-    h1, h2, h3 {
-      color: #b0cfc9;
-      margin-bottom: 0.5rem;
-    }
     .hero {
-      text-align: center;
-      margin-bottom: 2rem;
-      position: relative;
       display: flex;
-      align-items: flex-start;
       gap: 1rem;
+      align-items: center;
+      margin-bottom: 2rem;
     }
-    .hero > div:first-child {
-      position: absolute;
-      left: 0;
-      top: 10px;
-      width: 6px;
-      height: 180px;
-      background-color: #5e7f79;
-      border-radius: 3px;
-    }
-    .hero > div:last-child {
-      margin-left: 30px;
-      text-align: left;
-      flex: 1;
+    .hero img {
+      height: 50px;
     }
     .hero h2 {
+      font-size: 2rem;
+      font-weight: bold;
+      color: var(--accent);
+    }
+    .tabs {
       display: flex;
-      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 0.5rem;
-      font-weight: 700;
-      font-size: 1.8rem;
-      color: #b0cfc9;
+      margin-bottom: 2rem;
     }
-    .hero h2 img {
-      height: 50px;
-      user-select: none;
+    .tab-btn {
+      padding: 0.6rem 1.2rem;
+      border-radius: 30px;
+      border: none;
+      background-color: var(--primary);
+      color: #fff;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s ease;
+      font-size: 0.9rem;
     }
-    .hero p {
-      color: #5e7f79;
-      letter-spacing: 2px;
-      font-size: 13px;
-      margin-top: 0.3rem;
-      font-style: normal;
-      line-height: 1.4;
+    .tab-btn.active, .tab-btn:hover {
+      background-color: #4a6b67;
     }
-    ul {
-      padding-left: 1.2rem;
-      color: #cdd7d6;
-      user-select: none;
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.4s ease-in-out;
     }
-    a {
-      color: #5e7f79;
+    .tab-content.active {
+      display: block;
+    }
+    .unit {
+      margin-bottom: 1.5rem;
+    }
+    .unit h3 {
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .chapter-btn {
+      display: inline-block;
+      margin: 0.3rem;
+      padding: 0.5rem 1rem;
+      background: #20272c;
+      color: var(--accent);
+      border-radius: 6px;
       text-decoration: none;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+    }
+    .chapter-btn:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     .footer {
       text-align: center;
-      font-size: 0.9rem;
-      margin-top: 2rem;
+      margin-top: 3rem;
       color: #7a8b89;
-      user-select: none;
-    }
-    .section {
-      margin-bottom: 2rem;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
-  <div style="position: fixed; top: 0; left: 0; width: 100%; height: 5px; background-color: #5e7f79; z-index: 9999;"></div>
   <div class="container">
-
     <div class="hero">
-      <div></div>
+      <img src="Logo1.png" alt="Medhavardhan Logo">
       <div>
-        <h2>
-          <img src="Logo1.png" alt="Medhavardhan Logo" />
-          MEDHAVARDHAN
-        </h2>
-        <p>Make your skills stronger than the companies think, improve your abilities one step further than they want</p>
+        <h2>MEDHAVARDHAN</h2>
+        <p>Make your skills stronger than the companies think, improve your abilities one step further than they want.</p>
       </div>
     </div>
 
-    <div class="section">
-      <div style="display: inline-block; font-weight: bold; background-color: #5e7f79; padding: 0.5rem 1.5rem; border-top-left-radius: 10px; border-top-right-radius: 10px; color: #1c2524; font-size: 1.5rem; margin-top: 50px; box-shadow: 10 -2px 5px rgba(0,0,0,0.3);">
-        MATHEMATICS
-      </div>
-
-      <h2 style="margin-top: 30px;">Mathematics Study Materials</h2>
-
-      <ul>
-        <li><a href="downloads/maths_notes.pdf" target="_blank">📘 Complete JEE Math Notes PDF</a></li>
-        <li><a href="downloads/formula_book.pdf" target="_blank">📗 Best Formula Handbook</a></li>
-        <li><a href="downloads/mindmap.pdf" target="_blank">🧠 Math Mindmaps (Chapter-wise)</a></li>
-        <li><a href="downloads/mcq_book.pdf" target="_blank">📝 MCQ Practice Book</a></li>
-      </ul>
+    <div class="tabs">
+      <button class="tab-btn active" onclick="showTab('class1')">Class 1</button>
+      <button class="tab-btn" onclick="showTab('class2')">Class 2</button>
+      <button class="tab-btn" onclick="showTab('class3')">Class 3</button>
+      <button class="tab-btn" onclick="showTab('class4')">Class 4</button>
+      <button class="tab-btn" onclick="showTab('class5')">Class 5</button>
+      <button class="tab-btn" onclick="showTab('class6')">Class 6</button>
+      <button class="tab-btn" onclick="showTab('class7')">Class 7</button>
+      <button class="tab-btn" onclick="showTab('class8')">Class 8</button>
+      <button class="tab-btn" onclick="showTab('class9')">Class 9</button>
+      <button class="tab-btn" onclick="showTab('class10')">Class 10</button>
+      <button class="tab-btn" onclick="showTab('class11')">Class 11</button>
+      <button class="tab-btn" onclick="showTab('class12')">Class 12</button>
     </div>
+
+    <!-- Tab contents will be inserted here -->
+    <div id="tabContents"></div>
 
     <div class="footer">
       &copy; 2025 Medhavardhan Institute. All rights reserved.
     </div>
-
   </div>
+
+  <script>
+    const classChapters = {
+      class1: [
+        "Shapes and Space", "Numbers from One to Nine", "Addition", "Subtraction", "Numbers from Ten to Twenty", "Time", "Measurement", "Numbers from Twenty-one to Fifty", "Data Handling", "Patterns", "Numbers", "Money", "How Many"
+      ],
+      class2: [
+        "What is Long, What is Round?", "Counting in Groups", "How Much Can You Carry?", "Counting in Tens", "Patterns", "Footprints", "Jugs and Mugs", "Tens and Ones", "My Funday", "Add our Points", "Lines and Lines", "Give and Take", "The Longest Step", "Birds Come, Birds Go", "How Many Ponytails?"
+      ],
+      class3: [
+        "Where to Look From", "Fun with Numbers", "Give and Take", "Long and Short", "Shapes and Designs", "Fun with Give and Take", "Time Goes On", "Who is Heavier?", "How Many Times?", "Play with Patterns", "Jugs and Mugs", "Can We Share?", "Smart Charts", "Rupees and Paise"
+      ],
+      class4: [
+        "Building with Bricks", "Long and Short", "A Trip to Bhopal", "Tick-Tick-Tick", "The Way The World Looks", "The Junk Seller", "Jugs and Mugs", "Carts and Wheels", "Halves and Quarters", "Play with Patterns", "Tables and Shares", "How Heavy? How Light?", "Fields and Fences", "Smart Charts"
+      ],
+      class5: [
+        "The Fish Tale", "Shapes and Angles", "How Many Squares?", "Parts and Wholes", "Does it Look the Same?", "Be My Multiple, I'll Be Your Factor", "Can You See the Pattern?", "Mapping Your Way", "Boxes and Sketches", "Tenths and Hundredths", "Area and its Boundary", "Smart Charts", "Ways to Multiply and Divide", "How Big? How Heavy?"
+      ],
+      class6: [
+        "Knowing Our Numbers", "Whole Numbers", "Playing with Numbers", "Basic Geometrical Ideas", "Understanding Elementary Shapes", "Integers", "Fractions", "Decimals", "Data Handling", "Mensuration", "Algebra", "Ratio and Proportion", "Symmetry", "Practical Geometry"
+      ],
+      class7: [
+        "Integers", "Fractions and Decimals", "Data Handling", "Simple Equations", "Lines and Angles", "The Triangle and Its Properties", "Congruence of Triangles", "Comparing Quantities", "Rational Numbers", "Practical Geometry", "Perimeter and Area", "Algebraic Expressions", "Exponents and Powers", "Symmetry", "Visualising Solid Shapes"
+      ],
+      class8: [
+        "Rational Numbers", "Linear Equations in One Variable", "Understanding Quadrilaterals", "Practical Geometry", "Data Handling", "Squares and Square Roots", "Cubes and Cube Roots", "Comparing Quantities", "Algebraic Expressions and Identities", "Visualising Solid Shapes", "Mensuration", "Exponents and Powers", "Direct and Inverse Proportions", "Factorisation", "Introduction to Graphs", "Playing with Numbers"
+      ],
+      class9: [
+        "Number Systems", "Polynomials", "Coordinate Geometry", "Linear Equations in Two Variables", "Introduction to Euclid's Geometry", "Lines and Angles", "Triangles", "Quadrilaterals", "Areas of Parallelograms and Triangles", "Circles", "Constructions", "Heron’s Formula", "Surface Areas and Volumes", "Statistics", "Probability"
+      ],
+      class10: [
+        "Real Numbers", "Polynomials", "Pair of Linear Equations in Two Variables", "Quadratic Equations", "Arithmetic Progressions", "Triangles", "Coordinate Geometry", "Introduction to Trigonometry", "Some Applications of Trigonometry", "Circles", "Constructions", "Areas Related to Circles", "Surface Areas and Volumes", "Statistics", "Probability"
+      ],
+      class11: [...document.querySelector('#class11')?.innerText?.split('\n').slice(1) || []],
+      class12: [...document.querySelector('#class12')?.innerText?.split('\n').slice(1) || []]
+    };
+
+    const container = document.getElementById("tabContents");
+    for (let cls in classChapters) {
+      const div = document.createElement("div");
+      div.id = cls;
+      div.className = `tab-content ${cls === "class1" ? "active" : ""}`;
+      const unit = document.createElement("div");
+      unit.className = "unit";
+      unit.innerHTML = `<h3>${cls.replace("class", "Class ")} Chapters</h3>`;
+      classChapters[cls].forEach(chapter => {
+        const a = document.createElement("a");
+        a.href = "#";
+        a.className = "chapter-btn";
+        a.textContent = chapter;
+        unit.appendChild(a);
+      });
+      div.appendChild(unit);
+      container.appendChild(div);
+    }
+
+    function showTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(tab => {
+        tab.classList.remove('active');
+      });
+      document.getElementById(tabId).classList.add('active');
+
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      event.target.classList.add('active');
+    }
+  </script>
 </body>
 </html>
