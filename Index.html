@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Medhavardhan Institute</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    body {
+      background-color: #101417;
+      color: #d1dedc;
+      line-height: 1.6;
+      padding: 1rem;
+    }
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 2rem;
+      background: #181e22;
+      border-radius: 1rem;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    }
+    h1, h2, h3 {
+      color: #b0cfc9;
+      margin-bottom: 0.5rem;
+    }
+    .hero {
+      text-align: center;
+      margin-bottom: 2rem;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .hero > div:first-child {
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 6px;
+      height: 180px;
+      background-color: #5e7f79;
+      border-radius: 3px;
+    }
+    .hero > div:last-child {
+      margin-left: 30px;
+      text-align: left;
+      flex: 1;
+    }
+    .hero h2 {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: #b0cfc9;
+    }
+    .hero h2 img {
+      height: 50px;
+      user-select: none;
+    }
+    .hero p {
+      color: #5e7f79;
+      letter-spacing: 2px;
+      font-size: 13px;
+      margin-top: 0.3rem;
+      font-style: normal;
+      line-height: 1.4;
+    }
+    .hero button {
+      background-color: #5e7f79;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      margin-top: 1rem;
+      transition: background-color 0.3s ease;
+    }
+    .hero button:hover {
+      background-color: #4a6b67;
+    }
+    .section {
+      margin-bottom: 2rem;
+      transition: all 0.3s ease-in-out;
+    }
+    .section:hover,
+    .section:active {
+      transform: scale(1.02) translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    }
+    .course, .feature, .faq, .testimonial, .event, .student-box {
+      background-color: #20272c;
+      border-radius: 0.5rem;
+      padding: 1rem;
+      margin: 1rem 0;
+      color: #cdd7d6;
+      user-select: none;
+    }
+    .contact-icons img {
+      width: 32px;
+      margin-right: 10px;
+      vertical-align: middle;
+      user-select: none;
+    }
+    .footer {
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: 2rem;
+      color: #7a8b89;
+      user-select: none;
+    }
+    .student-dashboard, .admin-panel {
+      background-color: #252d33;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      user-select: none;
+    }
+    ul {
+      padding-left: 1.2rem;
+      color: #cdd7d6;
+      user-select: none;
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .enroll-wrapper {
+      margin-top: 1rem;
+      text-align: center;
+    }
+    #enrollForm {
+      margin-top: 1rem;
+      background: #2a363b;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      display: none;
+      max-width: 350px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #enrollForm label {
+      display: block;
+      margin-top: 0.5rem;
+      margin-bottom: 0.2rem;
+      color: #a5c0bb;
+      user-select: none;
+    }
+    #enrollForm input, #enrollForm select {
+      width: 100%;
+      padding: 0.4rem;
+      border-radius: 0.3rem;
+      border: none;
+      outline: none;
+      margin-bottom: 0.8rem;
+      font-size: 1rem;
+    }
+    #enrollForm button[type="submit"] {
+      background-color: #5e7f79;
+      color: white;
+      border: none;
+      padding: 0.6rem 1rem;
+      border-radius: 0.4rem;
+      cursor: pointer;
+      width: 100%;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+    #enrollForm button[type="submit"]:hover {
+      background-color: #4a6b67;
+    }
+    #formMessage {
+      margin-top: 0.8rem;
+      text-align: center;
+      color: #a5c0bb;
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+  <div style="position: fixed; top: 0; left: 0; width: 100%; height: 5px; background-color: #5e7f79; z-index: 9999;"></div>
+  <div class="container">
+
+    <div class="hero">
+      <div></div>
+      <div>
+        <h2>
+          <img src="Logo1.png" alt="Medhavardhan Logo" />
+          MEDHAVARDHAN
+        </h2>
+        <p>
+          Make your skills stronger than the companies think, improve your abilities one step further than they want
+        </p>
+
+        <div class="enroll-wrapper">
+          <button id="enrollBtn">Enroll Now</button>
+          <div id="enrollForm">
+            <form id="form" action="https://formspree.io/f/mjkrbojr" method="POST">
+              <label for="name">Name:</label>
+              <input type="text" name="name" id="name" required />
+
+              <label for="email">Email:</label>
+              <input type="email" name="_replyto" id="email" required />
+  
+              <label for="phone">Mobile Number:</label>
+              <input type="tel" name="phone" id="phone" placeholder="+91 9876543210" pattern="^\+\d{1,3} \d{6,14}$" required />
+
+              <label for="dob">Date of Birth:</label>
+              <input type="date" name="dob" id="dob" required />
+
+              <label for="studying">Currently Studying In:</label>
+              <select name="studying" id="studying" required>
+                <option value="" disabled selected>Select</option>
+                <option value="11th">11th</option>
+                <option value="12th">12th</option>
+                <option value="dropper">Dropper</option>
+                <option value="second-dropper">Second Dropper</option>
+              </select>
+
+              <label for="status12th">12th Status:</label>
+              <select name="status12th" id="status12th" required onchange="toggleMarksField()">
+                <option value="" disabled selected>Select</option>
+                <option value="passed">Passed</option>
+                <option value="waiting">Waiting</option>
+              </select>
+
+              <div id="marks-container" style="display:none;">
+                <label for="marks12th">Marks obtained in 12th (%):</label>
+                <input type="number" id="marks12th" name="marks12th" min="0" max="100" step="0.01" />
+              </div>
+
+              <label for="exams">Appearing For (select all that apply):</label>
+              <select name="exams" id="exams" multiple size="4" required>
+                <option value="jee">JEE</option>
+                <option value="nata">NATA</option>
+                <option value="uceed">UCEED</option>
+                <option value="nift">NIFT</option>
+              </select>
+
+              <button type="submit">Submit</button>
+            </form>
+            <div id="formMessage"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Courses Offered</h2>
+      <div class="course">
+        <h3>MATHEMATICS</h3>
+        <p>JEE mains + NATA based well organised materials, notes, mindmaps, best formula books and many more</p>
+      </div>
+      <div class="course">
+        <h3>Drawing & Designs</h3>
+        <p>Learn color theory, basic to advanced Design principals, Logo design, 3D 2D overlapping, combination, geometry, etc.</p>
+      </div>
+      <div class="course">
+        <h3>HISTORY</h3>
+        <p>NCERT architectural history extracts, other coaching materials, universities study materials, Timeline PDF quizzes</p>
+      </div>
+      <div class="course">
+        <h3>Logo Design</h3>
+        <p>Build soft, ASMR-style interfaces and high scoring design principals.</p>
+      </div>
+      <div class="course">
+        <h3>REVISION CARDS</h3>
+        <p>Revise through important PDFs, directly imp topics, scoring topics.</p>
+      </div>
+      <div class="course">
+        <h3>mr.oops quizzes</h3>
+        <p>Participate in Quiz league live champions leaderboard.</p>
+      </div>
+    </div>
+
+
+    
+    <div class="section">
+      <h2>About Medhavardhan</h2>
+      <p>We are a modern online institute focused on creative digital education. Our goal is to craft developers with both skills and soul. ✨</p>
+    </div>
+
+    <div class="section">
+      <h2>📚 Library</h2>
+      <ul>
+        <li>Free PDFs on Web & App Development</li>
+        <li>Daily reading suggestions</li>
+        <li>Books by top tech authors</li>
+        <li>Cheat-sheets for all programming languages</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Contact Us</h2>
+      <p>Email: <a href="mailto:contact@medhavardhan.in" style="color: #5e7f79;">contact@medhavardhan.in</a></p>
+      <div class="contact-icons">
+        <a href="https://instagram.com/medhavardhan" target="_blank" rel="noopener"><img src="instagram.png" alt="Instagram" /></a>
+        <a href="https://facebook.com/medhavardhan" target="_blank" rel="noopener"><img src="facebook.png" alt="Facebook" /></a>
+        <a href="https://youtube.com/medhavardhan" target="_blank" rel="noopener"><img src="youtube.png" alt="YouTube" /></a>
+      </div>
+    </div>
+
+
+
+    <div class="footer">
+      &copy; 2025 Medhavardhan Institute. All rights reserved.
+    </div>
+
+  </div>
+
+  <script>
+    const enrollBtn = document.getElementById("enrollBtn");
+    const enrollForm = document.getElementById("enrollForm");
+    const status12th = document.getElementById("status12th");
+    const marksContainer = document.getElementById("marks-container");
+
+    enrollBtn.addEventListener("click", () => {
+      enrollForm.style.display = enrollForm.style.display === "none" ? "block" : "none";
+    });
+
+    function toggleMarksField() {
+      if (status12th.value === "passed") {
+        marksContainer.style.display = "block";
+      } else {
+        marksContainer.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
